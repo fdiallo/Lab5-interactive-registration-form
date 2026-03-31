@@ -25,7 +25,7 @@ email.addEventListener("blur", () => {
     if (email.value.length === 0) {
         email.setCustomValidity("Email is required")
     } else {
-        password.setCustomValidity("")
+        email.setCustomValidity("")
     }
     //email.reportValidity()
     emailError.innerText = email.validationMessage
