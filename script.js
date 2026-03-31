@@ -44,13 +44,12 @@ password.addEventListener("blur", () => {
 confirmPassword.addEventListener("blur", () => {
     if (password.value !== confirmPassword.value) {
         confirmPassword.setCustomValidity("Confirm password must be equal to password")
-    }else {
+    } else {
         confirmPassword.setCustomValidity("")
     }
     //confirmPassword.reportValidity()
     confirmPasswordError.innerText = confirmPassword.validationMessage
 })
-
 
 const getSavedUsername = () => {
     if (typeof window !== "undefined") {
@@ -65,9 +64,8 @@ const setUsername = (newUsername) => {
     username.value = newUsername
 }
 
-
 registrationForm.addEventListener("submit", (event) => {
-    
+
     event.preventDefault()
 
     if (!username.validity.valid) {
@@ -96,7 +94,7 @@ registrationForm.addEventListener("submit", (event) => {
     }
 
     const formData = new FormData(registrationForm)
-    const usernameValue = formData.get("username") 
+    const usernameValue = formData.get("username")
 
     const emailValue = formData.get("email")
 
@@ -115,4 +113,3 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedUsername = getSavedUsername()
     setUsername(savedUsername)
 })
-
